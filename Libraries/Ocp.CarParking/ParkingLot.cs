@@ -3,10 +3,12 @@ using Ocp.Infrastructure.Exceptions;
 
 namespace Ocp.CarParking
 {
-    public class Park
+    public class ParkingLot
     {
         private int _capacity = 10;
         public int Capacity { get { return _capacity; } set { _capacity = value; } }
+        
+
 
         private readonly IList<Car> _cars = new List<Car>();
 

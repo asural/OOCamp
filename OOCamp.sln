@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocp.CarParking", "Libraries\Ocp.CarParking\Ocp.CarParking.csproj", "{F85C4B4E-A234-411C-87F6-74A3A6C7B8E8}"
 EndProject
@@ -9,9 +9,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C489A741-D05E-43C8-9274-F7BE31401C29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocp.CarParkingTest", "Tests\Ocp.CarParkingTest\Ocp.CarParkingTest.csproj", "{69ACAD2C-65A4-49D5-8D8F-9466C9068D2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocp.ParkingLotTest", "Tests\Ocp.CarParkingTest\Ocp.ParkingLotTest.csproj", "{69ACAD2C-65A4-49D5-8D8F-9466C9068D2D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocp.Infrastructure", "Libraries\Ocp.Infrastructure\Ocp.Infrastructure.csproj", "{585F118B-C22B-4ECB-B2F8-23555B38D76F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{50CF9E2F-E3A1-48A9-9C6D-C1BF7BC2E224}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

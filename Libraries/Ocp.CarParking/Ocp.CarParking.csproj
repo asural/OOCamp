@@ -41,8 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="Park.cs" />
+    <Compile Include="ParkingBoy.cs" />
+    <Compile Include="ParkingLot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,13 +4,13 @@ using Xunit;
 
 namespace Ocp.CarParkingTest
 {
-    public class CarParkingTest
+    public class ParkingLotTest
     {
         [Fact(DisplayName = "存车_车位量足够=>存入后可以取出")]
         public void 存车_车位量足够()
         {
             //Given
-            var p = new Park();
+            var p = new ParkingLot();
             var car = new Car();
             //When
             p.DepositCar(car);
@@ -23,48 +23,52 @@ namespace Ocp.CarParkingTest
         public void 存车_车位量不够()
         {
             //Given
-            var p = new Park();
+            var p = new ParkingLot();
             var car = new Car();
-            for (int j = 0; j < 10; j++)
+            for (var j = 0; j < 10; j++)
             {
                 p.DepositCar(car);
-
             }
 
             Assert.Throws<ParkingException>(() => p.DepositCar(car));
-
         }
 
         [Fact(DisplayName = "取车_尚未存车=>异常，无法取车")]
         public void 取车_尚未存车()
         {
             //Given
-            var p = new Park();
+            var p = new ParkingLot();
             var car = new Car();
 
-            Assert.Throws<CarNotFoundException>(() => { p.WithDrawCar(car); });
-            //When
+            //Then
+            Assert.Throws<CarNotFoundException>(() =>
+            {
+                //When
+                p.WithDrawCar(car);
+            });
         }
 
         [Fact(DisplayName = "取车_不提供票据=>异常，无法取车")]
         public void 取车_不提供票据()
         {
             //Given
-            var p = new Park();
+            var p = new ParkingLot();
             var car = new Car();
             p.DepositCar(car);
 
-
-            Assert.Throws<CarNotFoundException>(() => { p.WithDrawCar(null); });
-            //When
-
+            //Then
+            Assert.Throws<CarNotFoundException>(() =>
+            {
+                //When
+                p.WithDrawCar(null);
+            });
         }
 
         [Fact(DisplayName = "剩余车位量_车位量足够_存一辆车=>减一")]
         public void 剩余车位量_车位量足够_存一辆车()
         {
             //given
-            var p = new Park();
+            var p = new ParkingLot();
             var capacity = p.Capacity;
             //when
             p.DepositCar(new Car());
@@ -77,7 +81,7 @@ namespace Ocp.CarParkingTest
         public void 剩余车位量_车位量不够_存一辆车()
         {
             //given
-            var p = new Park();
+            var p = new ParkingLot();
             for (var i = 0; i < 10; i++)
             {
                 p.DepositCar(new Car());
@@ -101,7 +105,7 @@ namespace Ocp.CarParkingTest
         public void 剩余车位量_取一辆车()
         {
             //given
-            var p = new Park();
+            var p = new ParkingLot();
             var car = new Car();
             p.DepositCar(car);
             var capacity = p.Capacity;
@@ -112,6 +116,4 @@ namespace Ocp.CarParkingTest
             Assert.Equal(capacity + 1, lastestCapacity);
         }
     }
-
-
 }
