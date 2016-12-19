@@ -1,0 +1,7 @@
+**/bin/**
+**/obj/**
+**/project.lock.json
+.idea/workspace.xml
+publish/release/
+*.zip
+/packages/**
